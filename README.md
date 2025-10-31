@@ -2,6 +2,9 @@
 学士3回で実装したものであり、記録のためにgithubに残しておく.
 フロントエンドにはJavaScript,バックエンドにはfirebaseを利用している.  
 
+<img src="images/C.png" alt="アプリアイコン" width="250">
+
+
 ## ディレクトリの簡単な説明
 + /publicにはfirebaseでデプロイすべきファイルが投入されている  
 + /jsにはJavaScriptで記述されたファイルが,/htmlにはhtmlで記述されたファイルが投入されており,ともにページごとにファイルを分割している.  
