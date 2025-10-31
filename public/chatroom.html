@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>chatroom</title>
+  <link rel="stylesheet" href="https://unpnpkg.com/ress/dist/ress.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link rel="stylesheet" href="./css/chatroom.css">
+</head>
+
+<body>
+  <nav id="nav">
+    <div class="hamburger" v-on:click='active=!active'>
+      <span class="line line01" v-bind:class="{'v-line01':active}"></span>
+      <span class="line line02" v-bind:class="{'v-line02':active}"></span>
+      <span class="line line03" v-bind:class="{'v-line03':active}"></span>
+    </div>
+    <div class="menu" v-show="active">
+      <ul>
+        <li><a href="timetableedit.html" v-on:click='active=!active'>時間割編集</a></li>
+        <li><a href="home.html" v-on:click='active=!active'>ホーム画面</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="group-list">
+      <h2 id="group-name"></h2>
+      <li id="group-list">
+        <!-- グループ一覧の表示 -->
+      </li>
+    </div>
+  </div>
+  <div class="box">
+    <div id="output"></div>
+    <div id="send">
+      <textarea id="message-input" placeholder="メッセージを入力してください" cols="50" rows="2"></textarea>
+      <button id="send">送信</button>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#nav',
+      data: {
+        active: false
+      }
+    });
+  </script>
+  <script type="module" src="./js/chatroom.js"></script>
+
+</body>
+
+</html>

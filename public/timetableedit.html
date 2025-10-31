@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>時間割表編集画面</title>
+
+<body>
+  <nav id="nav">
+    <div class="hamburger" v-on:click='active=!active'>
+      <span class="line line01" v-bind:class="{'v-line01':active}"></span>
+      <span class="line line02" v-bind:class="{'v-line02':active}"></span>
+      <span class="line line03" v-bind:class="{'v-line03':active}"></span>
+    </div>
+    <div class="menu" v-show="active">
+      <ul>
+        <li><a href="home.html" v-on:click='active=!active'>ホーム</a></li>
+        <li><a href="chatroom.html" v-on:click='active=!active'>授業トークルーム</a></li>
+      </ul>
+    </div>
+  </nav>
+  <link rel="stylesheet" href="./css/timetableedit.css">
+  </head>
+  <h1>時間割表</h1>
+
+  <div class="schedule">
+    <div class="schedule-label"></div>
+    <div class="schedule-label">月</div>
+    <div class="schedule-label">火</div>
+    <div class="schedule-label">水</div>
+    <div class="schedule-label">木</div>
+    <div class="schedule-label">金</div>
+
+    <div class="schedule-label">1</div>
+    <div class="schedule-item" id="0-0">
+    </div>
+    <div class="schedule-item" id="1-0">
+    </div>
+    <div class="schedule-item" id="2-0">
+    </div>
+    <div class="schedule-item" id="3-0">
+    </div>
+    <div class="schedule-item" id="4-0">
+    </div>
+
+    <div class="schedule-label">2</div>
+    <div class="schedule-item" id="0-1">
+    </div>
+    <div class="schedule-item" id="1-1">
+    </div>
+    <div class="schedule-item" id="2-1">
+    </div>
+    <div class="schedule-item" id="3-1">
+    </div>
+    <div class="schedule-item" id="4-1">
+    </div>
+
+    <div class="schedule-label">3</div>
+    <div class="schedule-item" id="0-2">
+    </div>
+    <div class="schedule-item" id="1-2">
+    </div>
+    <div class="schedule-item" id="2-2">
+    </div>
+    <div class="schedule-item" id="3-2">
+    </div>
+    <div class="schedule-item" id="4-2">
+    </div>
+
+    <div class="schedule-label">4</div>
+    <div class="schedule-item" id="0-3">
+    </div>
+    <div class="schedule-item" id="1-3">
+    </div>
+    <div class="schedule-item" id="2-3">
+    </div>
+    <div class="schedule-item" id="3-3">
+    </div>
+    <div class="schedule-item" id="4-3">
+    </div>
+
+    <div class="schedule-label">5</div>
+    <div class="schedule-item" id="0-4">
+    </div>
+    <div class="schedule-item" id="1-4">
+    </div>
+    <div class="schedule-item" id="2-4">
+    </div>
+    <div class="schedule-item" id="3-4">
+    </div>
+    <div class="schedule-item" id="4-4">
+
+    </div>
+  </div>
+  <!--ここから曜日と時間の選択　-->
+  <div class="container">
+    <label for="day">曜日:</label>
+    <select id="day">
+      <option value="0">月曜日</option>
+      <option value="1">火曜日</option>
+      <option value="2">水曜日</option>
+      <option value="3">木曜日</option>
+      <option value="4">金曜日</option>
+    </select>
+    <br>
+    <label for="time">時間:</label>
+    <select id="time">
+      <option value="0">1限</option>
+      <option value="1">2限</option>
+      <option value="2">3限</option>
+      <option value="3">4限</option>
+      <option value="4">5限</option>
+    </select>
+    <button class="create-button" onclick="redirectToNewTable()">新規作成</button>
+    <button class="delete-button" id="deletebutton">クリア</button>
+  </div>
+  <script>
+    function redirectToNewTable() {
+      window.location.href = "newtimetable.html";
+    }
+  </script>
+
+  <select id="scrollBar" size="100"></select>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#nav',
+    data: {
+      active: false
+    }
+  });
+</script>
+<script type="module" src="./js/timetableedit.js"></script>
+
+
+</html>
